@@ -2,13 +2,14 @@ import { HiPhone } from "react-icons/hi2";
 import { HiUser } from "react-icons/hi2";
 import s from './Contact.module.css';
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsSlice";
+
+import { deleteContactThunk } from "../../redux/contactsOps";
 
 const Contact = ({ id, name, number }) => {
 
 const dispatch = useDispatch();
 
-const handleDelete = () => dispatch(deleteContact(id));
+const handleDelete = () => dispatch(deleteContactThunk(id));
 
   return (
       <div className={s.wrapper}>
